@@ -183,6 +183,8 @@ class Transliterator
             $file = __DIR__ . '/../data/' . sprintf('x%02x', $bank) . '.php';
 
             if (file_exists($file)) {
+                
+                $variant = $base = array();
 
                 include $file;
 
