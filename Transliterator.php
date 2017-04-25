@@ -26,22 +26,6 @@ class Transliterator extends Module
     }
 
     /**
-     * Module info
-     * @return array
-     */
-    public function info()
-    {
-        return array(
-            'name' => 'Transliterator',
-            'version' => '1.0.0-dev',
-            'description' => 'Allows to transliterate non-latin letters with auto-detecting the source language',
-            'author' => 'Superadmin ',
-            'core' => '1.x',
-            'license' => 'GPL-3.0+'
-        );
-    }
-
-    /**
      * Implements hook "language.translit"
      * @param string $string
      * @param string $language

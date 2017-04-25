@@ -1,0 +1,8 @@
+{
+    "name": "Transliterator",
+    "version": "1.0.0-dev",
+    "description": "Allows to transliterate non-latin letters with auto-detecting the source language",
+    "author": "Superadmin ",
+    "core": "1.x",
+    "license": "GPL-3.0+"
+}
