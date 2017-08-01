@@ -48,7 +48,7 @@ class Transliterator extends Module
         }
 
         /* @var $transliterator \gplcart\modules\transliterator\helpers\Transliterator */
-        $transliterator = $this->getInstance('gplcart\\modules\\transliterator\\helpers\\Transliterator');
+        $transliterator = $this->getHelper('Transliterator', 'transliterator');
         return $transliterator->transliterate($string, '?', $language);
     }
 
