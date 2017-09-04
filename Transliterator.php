@@ -40,6 +40,7 @@ class Transliterator extends Module
      * Transliterate a string
      * @param string $string
      * @param string|null $language
+     * @return string
      */
     public function transliterate($string, $language = null)
     {

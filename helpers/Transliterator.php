@@ -24,7 +24,7 @@ class Transliterator
      * @return string
      */
     public function transliterate($string, $unknown = '?',
-            $source_langcode = null)
+                                  $source_langcode = null)
     {
         // ASCII is always valid NFC! If we're only ever given plain ASCII, we can
         // avoid the overhead of initializing the decomposition tables by skipping
@@ -168,10 +168,10 @@ class Transliterator
 
     /**
      * Replaces a Unicode character using the transliteration database.
-     * @param $ord An ordinal Unicode character code.
-     * @param $unknown Replacement string for characters that do not have a suitable ASCII equivalent.
-     * @param $langcode Optional ISO 639 language code
-     * @return ASCII replacement character.
+     * @param string $ord An ordinal Unicode character code.
+     * @param string $unknown Replacement string for characters that do not have a suitable ASCII equivalent.
+     * @param string $langcode Optional ISO 639 language code
+     * @return string ASCII replacement character.
      */
     protected function replace($ord, $unknown = '?', $langcode)
     {
@@ -183,7 +183,7 @@ class Transliterator
             $file = __DIR__ . '/../data/' . sprintf('x%02x', $bank) . '.php';
 
             if (file_exists($file)) {
-                
+
                 $variant = $base = array();
 
                 include $file;
