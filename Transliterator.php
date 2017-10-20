@@ -26,14 +26,14 @@ class Transliterator extends Module
     }
 
     /**
-     * Implements hook "language.translit"
+     * Implements hook "language.translit.before"
      * @param string $string
      * @param string $language
-     * @param string|null $translit
+     * @param string|null $result
      */
-    public function hookLanguageTranslit($string, $language, &$translit)
+    public function hookLanguageTranslitBefore($string, $language, &$result)
     {
-        $translit = $this->transliterate($string, $language);
+        $result = $this->transliterate($string, $language);
     }
 
     /**
