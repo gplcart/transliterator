@@ -9,22 +9,13 @@
 
 namespace gplcart\modules\transliterator;
 
-use gplcart\core\Module,
-    gplcart\core\Config;
+use gplcart\core\Container;
 
 /**
  * Main class for Transliterator module
  */
-class Transliterator extends Module
+class Transliterator
 {
-
-    /**
-     * @param Config $config
-     */
-    public function __construct(Config $config)
-    {
-        parent::__construct($config);
-    }
 
     /**
      * Implements hook "language.translit.before"
@@ -49,9 +40,16 @@ class Transliterator extends Module
             $language = null;
         }
 
-        /* @var $transliterator \gplcart\modules\transliterator\helpers\Transliterator */
-        $transliterator = $this->getHelper('Transliterator', 'transliterator');
-        return $transliterator->transliterate($string, '?', $language);
+        return $this->getTransliterator()->transliterate($string, '?', $language);
+    }
+
+    /**
+     * Returns transliterator class instance
+     * @return \gplcart\modules\transliterator\helpers\Transliterator
+     */
+    protected function getTransliterator()
+    {
+        return Container::get('gplcart\\modules\\transliterator\\helpers\\Transliterator');
     }
 
 }
