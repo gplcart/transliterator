@@ -23,8 +23,7 @@ class Transliterator
      * @param null|string $source_langcode
      * @return string
      */
-    public function transliterate($string, $unknown = '?',
-                                  $source_langcode = null)
+    public function transliterate($string, $unknown = '?', $source_langcode = null)
     {
         // ASCII is always valid NFC! If we're only ever given plain ASCII, we can
         // avoid the overhead of initializing the decomposition tables by skipping

@@ -47,9 +47,11 @@ class Main
      * Returns transliterator class instance
      * @return \gplcart\modules\transliterator\helpers\Transliterator
      */
-    protected function getTransliterator()
+    public function getTransliterator()
     {
-        return Container::get('gplcart\\modules\\transliterator\\helpers\\Transliterator');
+        /** @var \gplcart\modules\transliterator\helpers\Transliterator $instance */
+        $instance = Container::get('gplcart\\modules\\transliterator\\helpers\\Transliterator');
+        return $instance;
     }
 
 }
